@@ -46,5 +46,10 @@ export default {
   ignoreTab: PropTypes.bool,
   label: PropTypes.string,
   autoComplete: PropTypes.string,
-  minLength: PropTypes.number
+  minLength: PropTypes.number,
+  inputComponent: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.func
+  ]),
+  id: PropTypes.string
 };

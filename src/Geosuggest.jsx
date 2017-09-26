@@ -418,6 +418,7 @@ class Geosuggest extends React.Component {
       ),
       shouldRenderLabel = this.props.label && attributes.id,
       input = <Input className={this.props.inputClassName}
+        id={this.props.id}
         ref={i => this.input = i}
         value={this.state.userInput}
         ignoreEnter={!this.state.isSuggestsHidden}
@@ -431,7 +432,8 @@ class Geosuggest extends React.Component {
         onNext={this.onNext}
         onPrev={this.onPrev}
         onSelect={this.onSelect}
-        onEscape={this.hideSuggests} {...attributes} />,
+        onEscape={this.hideSuggests} {...attributes}
+        inputComponent={this.props.inputComponent} />,
       suggestionsList = <SuggestList isHidden={this.state.isSuggestsHidden}
         style={this.props.style.suggests}
         suggestItemStyle={this.props.style.suggestItem}

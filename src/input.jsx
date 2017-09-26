@@ -117,9 +117,10 @@ class Input extends React.Component {
       classes = classnames(
         'geosuggest__input',
         this.props.className
-      );
+      ),
+      InputComponent = this.props.inputComponent || <input />;
 
-    return <input className={classes}
+    return <InputComponent className={classes}
       ref={i => this.input = i}
       type='text'
       {...attributes}
@@ -129,7 +130,8 @@ class Input extends React.Component {
       onChange={this.onChange}
       onKeyPress={this.onKeyPress}
       onFocus={this.onFocus}
-      onBlur={this.onBlur} />;
+      onBlur={this.onBlur}
+      {...this.props} />;
   }
 }
 
